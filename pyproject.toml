@@ -1,0 +1,60 @@
+[tool.poetry]
+name = "islp-labs"
+version = "0.3.22"
+description = "Library for ISLP labs"
+authors = [
+    "Trevor Hastie <hastie@stanford.edu>",
+    "Gareth James <gareth@emory.edu>",
+    "Jonathan Taylor <jonathan.taylor@stanford.edu>",
+    "Rob Tibshirani <tibs@stanford.edu>",
+    "Daniela Witten <dwitten@uw.edu>"
+]
+license = "BSD-3-Clause" # You need to specify the SPDX identifier
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.9"
+# python = "^3.11.6"
+numpy = ">=1.7.1"
+scipy = ">=0.9"
+pandas = ">=0.20,<=1.9"
+lxml = "*"
+scikit-learn = ">=1.2"
+joblib = "*"
+statsmodels = ">=0.13"
+lifelines = "*"
+pygam = "*"
+torch = "*"
+pytorch_lightning = "*"
+torchmetrics = "*"
+jupyter = "^1.0.0"
+jupytext = "^1.16.1"
+
+
+[tool.poetry.dev-dependencies]
+
+[project.urls]  # Optional
+"Homepage" = "https://github.com/intro-stat-learning/ISLP"
+"Bug Reports" = "https://github.com/intro-stat-learning/ISLP/issues"
+"Funding" = "https://donate.pypi.org"
+"Say Thanks!" = "http://saythanks.io/to/example"
+"Source" = "https://github.com/pypa/sampleproject/"
+
+[project.optional-dependencies]
+doc = ['Sphinx>=3.0']
+
+# [build-system]
+# requires = ["setuptools>=42",
+#             "wheel",
+# 	    "versioneer"
+# 	    ]
+# build-backend = "setuptools.build_meta"
+
+
+
+
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
