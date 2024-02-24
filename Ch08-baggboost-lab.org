@@ -1,7 +1,16 @@
+#+PROPERTY: header-args:jupyter-python :tangle ch08.py
+
 * Chapter 8
 :PROPERTIES:
 :CUSTOM_ID: chapter-8
 :END:
+
+#+BEGIN_SRC emacs-lisp :exports none
+(ek/set-jupyter-config :session "my-session2" :async "no" :kernel "islp")
+#+END_SRC
+
+#+RESULTS:
+
 * Lab: Tree-Based Methods
 :PROPERTIES:
 :CUSTOM_ID: lab-tree-based-methods
@@ -18,19 +27,6 @@ from ISLP.models import ModelSpec as MS
 #+end_src
 
 #+RESULTS:
-:RESULTS:
-# [goto error]
-: [0;31m---------------------------------------------------------------------------[0m
-: [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-: Cell [0;32mIn[28], line 4[0m
-: [1;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mpandas[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpd[39;00m
-: [1;32m      3[0m [38;5;28;01mfrom[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mimport[39;00m subplots
-: [0;32m----> 4[0m [38;5;28;01mimport[39;00m [38;5;21;01msklearn[39;00m[38;5;21;01m.[39;00m[38;5;21;01mmodel_selection[39;00m [38;5;28;01mas[39;00m [38;5;21;01mskm[39;00m
-: [1;32m      5[0m [38;5;28;01mfrom[39;00m [38;5;21;01mISLP[39;00m [38;5;28;01mimport[39;00m load_data, confusion_table
-: [1;32m      6[0m [38;5;28;01mfrom[39;00m [38;5;21;01mISLP[39;00m[38;5;21;01m.[39;00m[38;5;21;01mmodels[39;00m [38;5;28;01mimport[39;00m ModelSpec [38;5;28;01mas[39;00m MS
-:
-: [0;31mModuleNotFoundError[0m: No module named 'sklearn'
-:END:
 
 
 We also collect the new imports needed for this lab.
@@ -47,6 +43,8 @@ from sklearn.ensemble import \
       GradientBoostingRegressor as GBR)
 from ISLP.bart import BART
 #+end_src
+
+#+RESULTS:
 
 ** Fitting Classification Trees
 :PROPERTIES:
@@ -276,6 +274,19 @@ D = model.fit_transform(Boston)
 feature_names = list(D.columns)
 X = np.asarray(D)
 #+end_src
+
+#+RESULTS:
+
+
+#+begin_src python
+
+
+#+end_src
+
+#+RESULTS:
+: Index(['crim', 'zn', 'indus', 'chas', 'nox', 'rm', 'age', 'dis', 'rad', 'tax',
+:        'ptratio', 'lstat', 'medv'],
+:       dtype='object')
 
 First, we split the data into training and test sets, and fit the tree
 to the training data. Here we use 30% of the data for the test set.

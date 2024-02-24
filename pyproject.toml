@@ -29,6 +29,7 @@ pytorch_lightning = "*"
 torchmetrics = "*"
 jupyter = "^1.0.0"
 jupytext = "^1.16.1"
+islp = "^0.3.22"
 
 
 [tool.poetry.dev-dependencies]

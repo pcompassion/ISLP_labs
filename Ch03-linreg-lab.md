@@ -80,7 +80,7 @@ dir()
 
 ```
  This shows you everything that `Python` can find at the top level.
-There are certain objects like `__builtins__` that contain references to built-in
+There are certain objects like `builtins` that contain references to built-in
 functions like `print()`.
 
 Every python object has its own notion of
